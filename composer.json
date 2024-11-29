@@ -1,0 +1,82 @@
+{
+  "name": "user-api/general",
+  "description": "user-api",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "": "src/",
+      "UserApi\\Apps\\Main\\": "user-api/apps/main/src",
+      "UserApi\\Core\\": "user-api/packages/Core",
+      "UserApi\\CoreBundle\\": "user-api/packages/CoreBundle",
+      "UserApi\\UserApiKernel\\": "user-api-kernel"
+    },
+    "classmap": [
+      "app/AppKernel.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {}
+  },
+  "prefer-stable": true,
+  "scripts": {
+    "test:phpcs": "bin/ecs check",
+    "fix:phpcs": "bin/ecs check --fix",
+    "test:phpstan": "bin/phpstan analyse -c phpstan.neon"
+  },
+  "require": {
+    "php": ">=7.2.0",
+    "ext-curl": "*",
+    "ext-dom": "*",
+    "ext-iconv": "*",
+    "ext-json": "*",
+    "doctrine/doctrine-bundle": "1.8.1",
+    "doctrine/doctrine-migrations-bundle": "1.3.2",
+    "doctrine/orm": "2.5.14",
+    "jms/serializer": "3.12.2",
+    "liip/imagine-bundle": "1.9.1",
+    "paquettg/php-html-parser": "2.1.0",
+    "phpconsole/phpconsole": "3.5.1",
+    "ramsey/uuid": "4.1.1",
+    "symfony/assetic-bundle": "2.8.2",
+    "symfony/dotenv": "5.2.1",
+    "symfony/monolog-bundle": "2.12.1",
+    "symfony/symfony": "2.8.33",
+    "twig/extensions": "1.5.1",
+    "twig/twig": "1.41"
+  },
+  "require-dev": {
+    "ext-mbstring": "*",
+    "phpunit/phpunit": "8.5.15",
+    "sempro/phpunit-pretty-print": "1.4.0",
+    "symplify/easy-coding-standard": "^11.1",
+    "phpstan/phpstan": "^1.9"
+  },
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Crazy Chicken",
+      "email": "valeraserpi@gmail.com"
+    }
+  ],
+  "config": {
+    "bin-dir": "bin",
+    "secure-http": false,
+    "platform": {
+      "php": "7.2.34"
+    },
+    "sort-packages": true,
+    "gitlab-domains": [
+      "gitlab.com"
+    ]
+  },
+  "extra": {
+    "symfony-app-dir": "app",
+    "symfony-web-dir": "www",
+    "symfony-logs-dir": "files/logs",
+    "symfony-assets-install": "relative",
+    "branch-alias": {
+      "dev-master": "~2@dev"
+    }
+  },
+  "minimum-stability": "stable"
+}

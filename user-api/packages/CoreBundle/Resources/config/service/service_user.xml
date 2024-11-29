@@ -1,0 +1,35 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+           https://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service
+                id="UserApi\Core\Context\Application\Service\User\GetUsersService\GetUsersService"
+                class="UserApi\Core\Context\Application\Service\User\GetUsersService\GetUsersService">
+            <argument type="service"
+                      id="user_api.doctrine.repository.user"/>
+            <argument type="service"
+                      id="user_api.domain.security.authentication"/>
+        </service>
+        <service
+                id="UserApi\Core\Context\Application\Service\User\DeleteUserService\DeleteUserService"
+                class="UserApi\Core\Context\Application\Service\User\DeleteUserService\DeleteUserService">
+            <argument type="service"
+                      id="user_api.doctrine.repository.user"/>
+            <argument type="service"
+                      id="user_api.domain.security.authentication"/>
+            <tag name="user_api.entity_manager.aware"/>
+        </service>
+        <service
+                id="UserApi\Core\Context\Application\Service\User\UpdateUserService\UpdateUserService"
+                class="UserApi\Core\Context\Application\Service\User\UpdateUserService\UpdateUserService">
+            <argument type="service"
+                      id="user_api.doctrine.repository.user"/>
+            <argument type="service"
+                      id="user_api.doctrine.repository.access"/>
+            <argument type="service"
+                      id="user_api.domain.security.authentication"/>
+            <tag name="user_api.entity_manager.aware"/>
+        </service>
+    </services>
+</container>

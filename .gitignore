@@ -1,0 +1,13 @@
+/bin/*
+/vendor/*
+/dbdata/*
+/user-api/user-api/apps/main/cache/*
+/user-api/user-api/apps/main/logs/*
+/user-api/user-api/.env
+/user-api/.env
+/.idea/*
+/*.idea
+.env
+.phpunit.result.cache
+
+/docker/etc/web/conf.d/default.conf
